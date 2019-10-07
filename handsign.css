@@ -1,0 +1,275 @@
+body { 
+  margin: 0px; 
+  overflow: hidden; 
+  font-family: calibri; 
+  background: #E9F7FC; 
+}
+
+header {
+  height: 65px;
+  width: 100%;
+  background-color: rgba(34, 49, 52, 0.9)
+}
+
+.header-left {
+  float: left;
+  height: 20px;
+}
+
+.header-left h1 {
+  color: white;
+}
+
+.container {
+  width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.judg {
+  display: inline-block;
+  background-color: #FFF;
+  width: 30%;
+  height: 30%;
+  padding: 8px 18px;
+  font-size: 13px;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.handsign_img {
+  width: 70%;
+  height: 70%;
+}
+
+#sign_temp {
+  text-align: center;
+  position: relative;
+  top: 30px;
+  right: 220px;
+}
+
+/*    ボタン    */
+.btn-box {
+  text-align: center;
+  padding-top: 50px;
+  position: relative;
+  right: 190px;
+  top: 30px;
+}
+
+.btn-back {
+  text-align: center;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  margin: 10px;
+}
+
+.btn-back:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+  margin: 10px;
+}
+
+.btn-next {
+  text-align: center;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+  margin: 10px;
+}
+
+.btn-next:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+  margin: 10px;
+}
+
+/* 正解の丸 */
+.disp_circle{
+  font-size: 10px;
+}
+
+.circle {
+  display: none;
+  position: absolute;
+  width: 50%;
+  height: 50%;
+}
+
+/*   CSSヴィジュアライザー
+************************************************/
+*,*:before,*:after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+button {
+  padding: .5em;
+}
+#app {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  font-size: 100%;
+  overflow: hidden;
+  background-color: #101010;
+  -webkit-perspective: 1000;
+}
+#scene,
+#scene:before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 40em;
+  height: 40em;
+  margin: -19em 0 0 -20em;
+  border: 4px solid #A0A0A0;
+  background-color: rgba(255,255,255,.1);
+  background-image:
+  -webkit-linear-gradient(rgba(255,255,255,.4) .1em, transparent .1em),
+  -webkit-linear-gradient(0deg, rgba(255,255,255,.4) .1em, transparent .1em),
+  -webkit-linear-gradient(rgba(255,255,255,.3) .05em, transparent .05em),
+  -webkit-linear-gradient(0deg, rgba(255,255,255,.3) .05em, transparent .05em);
+  background-size: 5em 5em, 5em 5em, 1em 1em, 1em 1em;
+  background-position: -.1em -.1em, -.1em -.1em, -.05em -.05em, -.05em -.05em;
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: rotateX(75deg);
+  -moz-transform: rotateX(75deg);
+  -webkit-transform: rotateX(75deg);
+}
+#scene {
+  transform: rotateX(75deg);
+  -moz-transform: rotateX(75deg);
+  -webkit-transform: rotateX(75deg);
+}
+#scene:before {
+  content: '';
+  transform: rotateX(90deg) translateZ(19.5em) translateY(20em);
+  -moz-transform: rotateX(90deg) translateZ(19.5em) translateY(20em);
+  -webkit-transform: rotateX(90deg) translateZ(19.5em) translateY(20em);
+}
+.cube {
+  background-color: red;
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transform: translateX(19.5em) translateY(19.5em) translateZ(0em);
+  -moz-transform: translateX(19.5em) translateY(19.5em) translateZ(0em);
+  -webkit-transform: translateX(19.5em) translateY(19.5em) translateZ(0em);
+}
+.finger,
+.sphere {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 1em;
+  height: 1em;
+  margin: -.5em 0 0 -.5em;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform: translateX(14.5em) translateY(14.5em) translateZ(0);
+  -moz-transform: translateX(14.5em) translateY(14.5em) translateZ(0);
+  transform: translateX(14.5em) translateY(14.5em) translateZ(0);
+}
+
+.finger {
+  opacity: .8;
+}
+
+.sphere {
+  opacity: .3;
+  display: none;
+  font-size: 100px;
+}
+
+.show-hands .sphere {
+  display: block;
+}
+
+.face {
+  position: absolute;
+  width: 1.6em;
+  height: 1.6em;
+  background-color: inherit;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-box-shadow: inset 0 0 0 1px rgba(255,255,255,.9);
+  -moz-box-shadow: inset 0 0 0 1px rgba(255,255,255,.9);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.9);
+}
+.cube .face.tp {
+  -webkit-transform: translateZ(1em);
+  -moz-transform: translateZ(1em);
+  transform: translateZ(1em);
+}
+.cube .face.ft {
+  -webkit-transform: rotateX(90deg) translateZ(-1em);
+  -moz-transform: rotateX(90deg) translateZ(-1em);
+  transform: rotateX(90deg) translateZ(-1em);
+}
+.cube .face.bk {
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+}
+.cube .face.lt {
+  -webkit-transform: rotateY(90deg) translateX(-1em);
+  -moz-transform: rotateY(90deg) translateX(-1em);
+  transform: rotateY(90deg) translateX(-1em);
+}
+.cube .face.rt {
+  -webkit-transform: rotateY(90deg) translateX(-1em) translateZ(1em);
+  -moz-transform: rotateY(90deg) translateX(-1em) translateZ(1em);
+  transform: rotateY(90deg) translateX(-1em) translateZ(1em);
+}
+
+.finger .face.tp {
+  -webkit-transform: translateZ(1em);
+  -moz-transform: translateZ(1em);
+  transform: translateZ(1em);
+  height: 3em;
+}
+.finger .face.ft {
+  -webkit-transform: rotateX(90deg) translateZ(-3em);
+  -moz-transform: rotateX(90deg) translateZ(-3em);
+  transform: rotateX(90deg) translateZ(-3em);
+}
+.finger .face.bk {
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+}
+.finger .face.lt {
+  -webkit-transform: rotateY(90deg) translateX(-1em);
+  -moz-transform: rotateY(90deg) translateX(-1em);
+  transform: rotateY(90deg) translateX(-1em);
+  height: 2em;
+}
+.finger .face.rt {
+  -webkit-transform: rotateY(90deg) translateX(-1em) translateZ(1em);
+  -moz-transform: rotateY(90deg) translateX(-1em) translateZ(1em);
+  transform: rotateY(90deg) translateX(-1em) translateZ(1em);
+  height: 2em;
+}
