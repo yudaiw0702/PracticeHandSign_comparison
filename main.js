@@ -64,7 +64,21 @@ $(function() {
   $('.btn-change').on('click', function(){
     if(stage == 'あ'){
       call_a();
-    };
+    }else if(stage == 'い'){
+      call_i();
+    }else if(stage == 'く'){
+      call_ku();
+    }else if(stage == 'し'){
+      call_si();
+    }else if(stage == 'え'){
+      call_e();
+    }else if(stage == 'る'){
+      call_ru();
+    }else if(stage == 'む'){
+      call_mu();
+    }else if(stage == 'ひ'){
+      call_hi();
+    }
   });
 
   //ボタン表示切り替え
