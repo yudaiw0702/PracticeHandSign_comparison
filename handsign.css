@@ -58,7 +58,7 @@ header {
   top: 370px;
 }
 
-.btn-back {
+.btn-change {
   text-align: center;
   padding: 0.5em 1em;
   text-decoration: none;
@@ -69,7 +69,7 @@ header {
   margin: 10px;
 }
 
-.btn-back:active {
+.btn-change:active {
   /*ボタンを押したとき*/
   -webkit-transform: translateY(4px);
   transform: translateY(4px);/*下に動く*/
