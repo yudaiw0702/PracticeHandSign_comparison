@@ -44,18 +44,18 @@ header {
 
 #sign_temp {
   text-align: center;
-  position: relative;
-  top: 30px;
-  right: 220px;
+  position: absolute;
+  top: 350px;
+  right: 250px;
 }
 
 /*    ボタン    */
 .btn-box {
   text-align: center;
   padding-top: 50px;
-  position: relative;
-  right: 190px;
-  top: 30px;
+  position: absolute;
+  right: 250px;
+  top: 370px;
 }
 
 .btn-back {
@@ -77,7 +77,7 @@ header {
   margin: 10px;
 }
 
-.btn-next {
+.hide-ans {
   text-align: center;
   padding: 0.5em 1em;
   text-decoration: none;
@@ -88,7 +88,7 @@ header {
   margin: 10px;
 }
 
-.btn-next:active {
+.hide-ans:active {
   /*ボタンを押したとき*/
   -webkit-transform: translateY(4px);
   transform: translateY(4px);/*下に動く*/
