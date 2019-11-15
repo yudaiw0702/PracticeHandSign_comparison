@@ -40,6 +40,7 @@ header {
 .handsign_img {
   width: 70%;
   height: 70%;
+  display: none;
 }
 
 #sign_temp {
